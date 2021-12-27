@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- <div id='im'><img src="/static/images/room.jpg" alt=""></div>
+  <div id='light'></div>
+  <div><p>message→</p></div>
+<center>
+ <div class="text-container">
+   <p>Hello! {{ myname }}</p>
+   <br><br><br><br>
+   <p>Press Enter</p>
+ </div>
+    </center> -->
+</body>
+
+<style>
+#im{
+  display: none;
+}
+body {
+ background-color: #fff;
+ overflow: hidden;
+}
+
+body * {
+ z-index: 20;
+ color: #fff;
+}
+
+p {
+ position: relative;
+ font-size: 50px;
+ font-family: 'Vollkorn', serif;
+}
+
+
+
+
+#light {
+ position: absolute;
+ width: 300px;
+ height: 300px;
+ background-color: #000;
+ z-index: 10;
+ -webkit-box-shadow: inset 0px 0px 0px 0px rgba(255,255,255,1);
+ -moz-box-shadow: inset 0px 0px 0px 0px rgba(255,255,255,1);
+ box-shadow: inset 0px 0px 0px 0px rgba(255,255,255,1);
+
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+$(document).mousemove(function(event){
+$("#light").css({"top": event.pageY - 140, "left": event.pageX - 140});
+});
+});
+document.onkeydown = function(e) {
+
+      switch (e.keyCode) {
+        case 13:
+        window.location.href = '/twitter/command';
+             break;
+          default:
+              break;
+            }
+          }
+
+setTimeout(function(){
+  window.location.href = '/twitter/command';
+}, 0.01*1000);
+
+window.onload = function(){
+  setTimeout();
+}
+</script>
+
+</html>
